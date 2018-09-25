@@ -11,6 +11,9 @@ doctest = false
 cast = { version = "0.2.2", features = ["x128"] }
 rand = { version = "0.4", features = ["i128_support"] }
 
+[dev-dependencies]
+criterion = "0.2"
+
 [dependencies.compiler_builtins]
 path = ".."
 default-features = false
@@ -26,3 +29,7 @@ c = ["compiler_builtins/c"]
 mem = ["compiler_builtins/mem"]
 mangled-names = ["compiler_builtins/mangled-names"]
 default = ["mangled-names"]
+
+[[bench]]
+name = "mem"
+harness = false
